@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rojas Exploring Mazatlán — Authentic Private Tours & Transportation</title>
+<meta name="description" content="Certified local guide offering private tours, airport transfers, fishing trips and cultural excursions in Mazatlán, Sinaloa. Family-owned, SECTUR certified." />
+<meta property="og:title" content="Rojas Exploring Mazatlán — Private Tours & Transportation" />
+<meta property="og:description" content="Discover the real Mazatlán with a certified local guide. Private tours, airport transfers, fishing adventures and cultural experiences." />
+<meta property="og:type" content="website" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        navy: { DEFAULT: '#0B2545', deep: '#081A33', soft: '#13345C' },
+        ocean: { DEFAULT: '#1E6E8C', light: '#2E8FB0', mist: '#E8F1F4' },
+        gold: { DEFAULT: '#C8A24B', soft: '#E3C988', pale: '#F6EFDC' },
+        sand: '#FBFAF7'
+      },
+      fontFamily: {
+        display: ['Fraunces', 'serif'],
+        sans: ['Inter', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: #FBFAF7; color: #0B2545; }
+  .font-display { font-family: 'Fraunces', serif; }
+
+  /* Hero */
+  .hero-bg {
+    background-image: linear-gradient(180deg, rgba(8,26,51,0.55) 0%, rgba(11,37,69,0.65) 100%), url('https://images.unsplash.com/photo-1597466599360-3b9775841aec?auto=format&fit=crop&w=2000&q=80');
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* Scroll reveal */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* Gallery hover */
+  .gallery-item img { transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+  .gallery-item:hover img { transform: scale(1.08); }
+  .gallery-item .overlay { opacity: 0; transition: opacity .4s ease; }
+  .gallery-item:hover .overlay { opacity: 1; }
+
+  .card-lift { transition: transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s ease; }
+  .card-lift:hover { transform: translateY(-6px); box-shadow: 0 24px 50px -20px rgba(11,37,69,.28); }
+
+  .nav-link { position: relative; }
+  .nav-link::after { content:''; position:absolute; left:0; bottom:-4px; height:2px; width:0; background:#C8A24B; transition: width .3s ease; }
+  .nav-link:hover::after { width:100%; }
+
+  .wa-pulse { box-shadow: 0 0 0 0 rgba(37,211,102,.5); animation: pulse 2.4s infinite; }
+  @keyframes pulse { 70% { box-shadow: 0 0 0 14px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
+
+  .hero-rise { opacity:0; transform: translateY(30px); animation: rise .9s cubic-bezier(.2,.7,.2,1) forwards; }
+  .d1{animation-delay:.15s}.d2{animation-delay:.35s}.d3{animation-delay:.55s}.d4{animation-delay:.75s}
+  @keyframes rise { to { opacity:1; transform:none; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal, .hero-rise { opacity:1 !important; transform:none !important; animation:none !important; transition:none !important; }
+    .wa-pulse { animation:none; }
+  }
+
+  ::selection { background:#C8A24B; color:#081A33; }
+  .focus-ring:focus-visible { outline: 3px solid #C8A24B; outline-offset: 2px; border-radius: 6px; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- NAVBAR -->
+<header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <nav class="max-w-7xl mx-auto px-5 lg:px-8 flex items-center justify-between h-[72px]">
+    <a href="#home" class="flex items-center gap-2.5 focus-ring" aria-label="Rojas Exploring Mazatlán home">
+      <span class="grid place-items-center w-10 h-10 rounded-full bg-gold/15 border border-gold/40">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-gold"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+      </span>
+      <span class="leading-tight">
+        <span class="block font-display text-[15px] font-600 nav-brand text-white">Rojas Exploring</span>
+        <span class="block text-[10px] tracking-[0.22em] uppercase nav-brand-sub text-gold-soft">Mazatlán</span>
+      </span>
+    </a>
+
+    <div class="hidden lg:flex items-center gap-7 text-[14px] font-500 nav-items text-white/90">
+      <a href="#home" class="nav-link focus-ring" data-i18n="nav_home">Home</a>
+      <a href="#tours" class="nav-link focus-ring" data-i18n="nav_tours">Tours</a>
+      <a href="#services" class="nav-link focus-ring" data-i18n="nav_services">Services</a>
+      <a href="#gallery" class="nav-link focus-ring" data-i18n="nav_gallery">Gallery</a>
+      <a href="#about" class="nav-link focus-ring" data-i18n="nav_about">About Us</a>
+      <a href="#contact" class="nav-link focus-ring" data-i18n="nav_contact">Contact</a>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <button id="langToggle" class="hidden sm:flex items-center gap-1.5 text-[13px] font-600 px-3 py-2 rounded-full border nav-lang transition focus-ring" aria-label="Switch language">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span id="langLabel">ES</span>
+      </button>
+      <a href="https://wa.me/526692978408" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 bg-[#25D366] text-white text-[13px] font-600 px-4 py-2.5 rounded-full hover:bg-[#1fb855] transition focus-ring">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.516 5.26l-.999 3.648 3.972-1.607zm5.392-1.6z"/></svg>
+        WhatsApp
+      </a>
+      <button id="menuBtn" class="lg:hidden p-2 rounded-md nav-burger focus-ring" aria-label="Open menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="lg:hidden hidden bg-navy-deep/98 backdrop-blur-md border-t border-white/10">
+    <div class="px-6 py-5 flex flex-col gap-1 text-white">
+      <a href="#home" class="mobile-link py-3 border-b border-white/8" data-i18n="nav_home">Home</a>
+      <a href="#tours" class="mobile-link py-3 border-b border-white/8" data-i18n="nav_tours">Tours</a>
+      <a href="#services" class="mobile-link py-3 border-b border-white/8" data-i18n="nav_services">Services</a>
+      <a href="#gallery" class="mobile-link py-3 border-b border-white/8" data-i18n="nav_gallery">Gallery</a>
+      <a href="#about" class="mobile-link py-3 border-b border-white/8" data-i18n="nav_about">About Us</a>
+      <a href="#contact" class="mobile-link py-3 border-b border-white/8" data-i18n="nav_contact">Contact</a>
+      <div class="flex items-center gap-3 pt-4">
+        <button id="langToggleMobile" class="flex-1 flex items-center justify-center gap-2 py-3 rounded-full border border-white/25 text-[14px] font-600">
+          <span>🌐</span><span id="langLabelMobile">Español</span>
+        </button>
+        <a href="https://wa.me/526692978408" target="_blank" rel="noopener" class="flex-1 text-center bg-[#25D366] py-3 rounded-full text-[14px] font-600">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero-bg min-h-screen flex items-center relative">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 w-full pt-28 pb-20">
+    <div class="max-w-3xl">
+      <span class="hero-rise d1 inline-flex items-center gap-2 text-gold-soft text-[12px] font-600 tracking-[0.22em] uppercase mb-6 px-4 py-2 rounded-full border border-gold/30 bg-white/5 backdrop-blur-sm">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 6.9H22l-6 4.4 2.3 7-6.3-4.6L5.7 20.3 8 13.3 2 8.9h7.6z" stroke="currentColor" stroke-width="1.4"/></svg>
+        <span data-i18n="hero_badge">SECTUR Certified Local Guide</span>
+      </span>
+      <h1 class="hero-rise d2 font-display text-white text-[40px] sm:text-[56px] lg:text-[64px] leading-[1.05] font-600 mb-6">
+        <span data-i18n="hero_title">Discover the real Mazatlán with a certified local guide</span>
+      </h1>
+      <p class="hero-rise d3 text-white/85 text-[17px] sm:text-[19px] leading-relaxed max-w-2xl mb-9" data-i18n="hero_sub">
+        Private tours, airport transfers, fishing adventures and cultural experiences designed for travelers who want more than just sightseeing.
+      </p>
+      <div class="hero-rise d4 flex flex-col sm:flex-row gap-4">
+        <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-gold text-navy-deep font-600 px-7 py-4 rounded-full hover:bg-gold-soft transition focus-ring text-[15px]">
+          <span data-i18n="hero_cta1">Book your tour</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="https://wa.me/526692978408" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 text-white font-600 px-7 py-4 rounded-full hover:bg-white/20 transition focus-ring text-[15px]">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.516 5.26l-.999 3.648 3.972-1.607z"/></svg>
+          <span data-i18n="hero_cta2">Contact on WhatsApp</span>
+        </a>
+      </div>
+      <div class="hero-rise d4 flex flex-wrap items-center gap-x-8 gap-y-3 mt-12 text-white/75 text-[14px]">
+        <span class="flex items-center gap-2"><span class="text-gold">★★★★★</span> <span data-i18n="hero_trust1">Trusted by travelers worldwide</span></span>
+        <span class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="text-gold-soft"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/></svg> <span data-i18n="hero_trust2">NOM-08 certified</span></span>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-7 left-1/2 -translate-x-1/2 text-white/60 hidden sm:block">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="animate-bounce"><path d="M12 5v14M6 13l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section id="tours" class="py-24 lg:py-32 bg-sand">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="reveal max-w-2xl mb-16">
+      <span class="text-ocean text-[12px] font-700 tracking-[0.22em] uppercase" data-i18n="why_eyebrow">Why travel with us</span>
+      <h2 class="font-display text-navy text-[34px] lg:text-[44px] font-600 mt-3 leading-tight" data-i18n="why_title">More than a tour. A local welcome.</h2>
+      <p class="text-navy/60 text-[17px] mt-4 leading-relaxed" data-i18n="why_sub">Every detail is handled by our family so you can relax and experience Mazatlán the way locals know it.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" id="whyGrid"></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="py-24 lg:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="reveal text-center max-w-2xl mx-auto mb-16">
+      <span class="text-ocean text-[12px] font-700 tracking-[0.22em] uppercase" data-i18n="srv_eyebrow">What we offer</span>
+      <h2 class="font-display text-navy text-[34px] lg:text-[44px] font-600 mt-3 leading-tight" data-i18n="srv_title">Featured services</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="servicesGrid"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-24 lg:py-32 bg-navy text-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
+    <div class="reveal relative">
+      <div class="rounded-3xl overflow-hidden shadow-2xl">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1000&q=80" alt="Boat exploring the coastline of Mazatlán" class="w-full h-[480px] object-cover" />
+      </div>
+      <div class="absolute -bottom-6 -right-2 sm:-right-6 bg-gold text-navy-deep rounded-2xl px-7 py-5 shadow-xl">
+        <div class="font-display text-[34px] font-700 leading-none">15+</div>
+        <div class="text-[12px] font-600 tracking-wide uppercase mt-1" data-i18n="about_stat">Years sharing Mazatlán</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <span class="text-gold-soft text-[12px] font-700 tracking-[0.22em] uppercase" data-i18n="about_eyebrow">Our story</span>
+      <h2 class="font-display text-[34px] lg:text-[44px] font-600 mt-3 leading-tight" data-i18n="about_title">A family business built on local knowledge</h2>
+      <p class="text-white/75 text-[16px] leading-relaxed mt-6" data-i18n="about_p1">Rojas Exploring Mazatlán began as a family passion for our city and grew into a trusted name in private tourism. We are not a call center or a faceless agency. When you book with us, you are welcomed by the same people who guide you.</p>
+      <p class="text-white/75 text-[16px] leading-relaxed mt-4" data-i18n="about_p2">As a certified guide under SECTUR and NOM-08 standards, every experience is built around your interests, your pace and your comfort. From the historic center to the open sea, we share the Mazatlán we love.</p>
+      <div class="grid grid-cols-2 gap-5 mt-9">
+        <div class="border-l-2 border-gold pl-4">
+          <div class="font-display text-[26px] font-600" data-i18n="about_b1n">100%</div>
+          <div class="text-white/60 text-[13px] mt-1" data-i18n="about_b1t">Private & personalized</div>
+        </div>
+        <div class="border-l-2 border-gold pl-4">
+          <div class="font-display text-[26px] font-600" data-i18n="about_b2n">SECTUR</div>
+          <div class="text-white/60 text-[13px] mt-1" data-i18n="about_b2t">Certified guide</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="py-24 lg:py-32 bg-sand">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="reveal text-center max-w-2xl mx-auto mb-14">
+      <span class="text-ocean text-[12px] font-700 tracking-[0.22em] uppercase" data-i18n="gal_eyebrow">A glimpse</span>
+      <h2 class="font-display text-navy text-[34px] lg:text-[44px] font-600 mt-3 leading-tight" data-i18n="gal_title">Moments from Mazatlán</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="py-24 lg:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="reveal text-center max-w-2xl mx-auto mb-16">
+      <span class="text-ocean text-[12px] font-700 tracking-[0.22em] uppercase" data-i18n="rev_eyebrow">Guest reviews</span>
+      <h2 class="font-display text-navy text-[34px] lg:text-[44px] font-600 mt-3 leading-tight" data-i18n="rev_title">What travelers say</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="reviewsGrid"></div>
+  </div>
+</section>
+
+<!-- BOOKING PROCESS -->
+<section class="py-24 lg:py-32 bg-ocean-mist">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8">
+    <div class="reveal text-center max-w-2xl mx-auto mb-16">
+      <span class="text-ocean text-[12px] font-700 tracking-[0.22em] uppercase" data-i18n="book_eyebrow">Simple & easy</span>
+      <h2 class="font-display text-navy text-[34px] lg:text-[44px] font-600 mt-3 leading-tight" data-i18n="book_title">How it works</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8 relative" id="bookingGrid"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24 lg:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-12">
+    <div class="reveal">
+      <span class="text-ocean text-[12px] font-700 tracking-[0.22em] uppercase" data-i18n="con_eyebrow">Get in touch</span>
+      <h2 class="font-display text-navy text-[34px] lg:text-[44px] font-600 mt-3 leading-tight" data-i18n="con_title">Let's plan your Mazatlán experience</h2>
+      <p class="text-navy/60 text-[16px] mt-4 leading-relaxed" data-i18n="con_sub">Tell us what you have in mind and we'll reply quickly, usually within a few hours.</p>
+
+      <div class="mt-9 space-y-4">
+        <a href="tel:+526692978408" class="flex items-center gap-4 group focus-ring rounded-xl">
+          <span class="grid place-items-center w-12 h-12 rounded-full bg-ocean-mist text-ocean shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8 9.6a16 16 0 006 6l1.1-1.1a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z" stroke="currentColor" stroke-width="1.6"/></svg></span>
+          <span><span class="block text-[12px] text-navy/50" data-i18n="con_phone">Phone</span><span class="block font-600 text-navy group-hover:text-ocean transition">+52 669 297 8408</span></span>
+        </a>
+        <a href="https://wa.me/526692978408" target="_blank" rel="noopener" class="flex items-center gap-4 group focus-ring rounded-xl">
+          <span class="grid place-items-center w-12 h-12 rounded-full bg-[#25D366]/12 text-[#1fb855] shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg></span>
+          <span><span class="block text-[12px] text-navy/50">WhatsApp</span><span class="block font-600 text-navy group-hover:text-ocean transition">+52 669 297 8408</span></span>
+        </a>
+        <a href="mailto:jesusemporio12@gmail.com" class="flex items-center gap-4 group focus-ring rounded-xl">
+          <span class="grid place-items-center w-12 h-12 rounded-full bg-ocean-mist text-ocean shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.6"/></svg></span>
+          <span><span class="block text-[12px] text-navy/50" data-i18n="con_email">Email</span><span class="block font-600 text-navy group-hover:text-ocean transition">jesusemporio12@gmail.com</span></span>
+        </a>
+        <div class="flex items-center gap-4">
+          <span class="grid place-items-center w-12 h-12 rounded-full bg-ocean-mist text-ocean shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg></span>
+          <span><span class="block text-[12px] text-navy/50" data-i18n="con_loc">Location</span><span class="block font-600 text-navy">Mazatlán, Sinaloa, Mexico</span></span>
+        </div>
+      </div>
+
+      <div class="mt-8 rounded-2xl overflow-hidden border border-navy/10 h-56">
+        <iframe title="Map of Mazatlán" class="w-full h-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-106.48%2C23.18%2C-106.36%2C23.27&layer=mapnik&marker=23.2494%2C-106.4111"></iframe>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="bg-sand rounded-3xl p-7 sm:p-9 border border-navy/8 shadow-sm">
+        <h3 class="font-display text-navy text-[24px] font-600 mb-6" data-i18n="form_title">Request your tour</h3>
+        <div class="space-y-4">
+          <div>
+            <label class="block text-[13px] font-600 text-navy/70 mb-1.5" data-i18n="form_name">Full name</label>
+            <input id="f_name" type="text" class="w-full rounded-xl border border-navy/15 bg-white px-4 py-3 text-[15px] focus-ring focus:border-ocean transition" />
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[13px] font-600 text-navy/70 mb-1.5" data-i18n="form_email">Email</label>
+              <input id="f_email" type="email" class="w-full rounded-xl border border-navy/15 bg-white px-4 py-3 text-[15px] focus-ring focus:border-ocean transition" />
+            </div>
+            <div>
+              <label class="block text-[13px] font-600 text-navy/70 mb-1.5" data-i18n="form_phone">Phone</label>
+              <input id="f_phone" type="tel" class="w-full rounded-xl border border-navy/15 bg-white px-4 py-3 text-[15px] focus-ring focus:border-ocean transition" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-[13px] font-600 text-navy/70 mb-1.5" data-i18n="form_msg">What would you like to do?</label>
+            <textarea id="f_msg" rows="4" class="w-full rounded-xl border border-navy/15 bg-white px-4 py-3 text-[15px] focus-ring focus:border-ocean transition resize-none"></textarea>
+          </div>
+          <button id="sendBtn" class="w-full bg-navy text-white font-600 py-4 rounded-xl hover:bg-navy-soft transition focus-ring flex items-center justify-center gap-2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+            <span data-i18n="form_btn">Send via WhatsApp</span>
+          </button>
+          <p class="text-center text-[12px] text-navy/45" data-i18n="form_note">We reply quickly, usually within a few hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-navy-deep text-white pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+      <div>
+        <div class="flex items-center gap-2.5 mb-4">
+          <span class="grid place-items-center w-9 h-9 rounded-full bg-gold/15 border border-gold/40"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-gold"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg></span>
+          <span class="font-display font-600 text-[16px]">Rojas Exploring Mazatlán</span>
+        </div>
+        <p class="text-white/55 text-[14px] leading-relaxed" data-i18n="foot_about">Authentic private tours and transportation in Mazatlán, guided by a certified local family.</p>
+      </div>
+      <div>
+        <h4 class="font-600 text-[14px] tracking-wide uppercase text-gold-soft mb-4" data-i18n="foot_links">Quick links</h4>
+        <ul class="space-y-2.5 text-[14px] text-white/65">
+          <li><a href="#home" class="hover:text-gold transition" data-i18n="nav_home">Home</a></li>
+          <li><a href="#tours" class="hover:text-gold transition" data-i18n="nav_tours">Tours</a></li>
+          <li><a href="#gallery" class="hover:text-gold transition" data-i18n="nav_gallery">Gallery</a></li>
+          <li><a href="#about" class="hover:text-gold transition" data-i18n="nav_about">About Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-600 text-[14px] tracking-wide uppercase text-gold-soft mb-4" data-i18n="foot_srv">Services</h4>
+        <ul class="space-y-2.5 text-[14px] text-white/65">
+          <li data-i18n="srv1_t">Airport Transportation</li>
+          <li data-i18n="srv2_t">Private Tours</li>
+          <li data-i18n="srv3_t">Fishing Trips</li>
+          <li data-i18n="srv4_t">Cultural Excursions</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-600 text-[14px] tracking-wide uppercase text-gold-soft mb-4" data-i18n="foot_contact">Contact</h4>
+        <ul class="space-y-2.5 text-[14px] text-white/65">
+          <li>+52 669 297 8408</li>
+          <li>jesusemporio12@gmail.com</li>
+          <li>Mazatlán, Sinaloa, MX</li>
+        </ul>
+        <div class="flex gap-3 mt-5">
+          <a href="#" aria-label="Facebook" class="grid place-items-center w-9 h-9 rounded-full bg-white/8 hover:bg-gold hover:text-navy-deep transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3a4 4 0 00-4 4v2H8v3h2v6h3v-6h2.5l.5-3H13v-2a1 1 0 011-1z"/></svg></a>
+          <a href="#" aria-label="Instagram" class="grid place-items-center w-9 h-9 rounded-full bg-white/8 hover:bg-gold hover:text-navy-deep transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg></a>
+          <a href="https://wa.me/526692978408" aria-label="WhatsApp" class="grid place-items-center w-9 h-9 rounded-full bg-white/8 hover:bg-gold hover:text-navy-deep transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <p class="text-center text-white/45 text-[13px] mt-8">© 2026 Rojas Exploring Mazatlán. <span data-i18n="foot_rights">All Rights Reserved.</span></p>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/526692978408" target="_blank" rel="noopener" class="fixed bottom-5 right-5 z-50 grid place-items-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-lg wa-pulse focus-ring" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.516 5.26l-.999 3.648 3.972-1.607z"/></svg>
+</a>
+
+<script>
+/* ---------- i18n ---------- */
+const I18N = {
+  en: {
+    nav_home:"Home", nav_tours:"Why Us", nav_services:"Services", nav_gallery:"Gallery", nav_about:"About Us", nav_contact:"Contact",
+    hero_badge:"SECTUR Certified Local Guide",
+    hero_title:"Discover the real Mazatlán with a certified local guide",
+    hero_sub:"Private tours, airport transfers, fishing adventures and cultural experiences designed for travelers who want more than just sightseeing.",
+    hero_cta1:"Book your tour", hero_cta2:"Contact on WhatsApp",
+    hero_trust1:"Trusted by travelers worldwide", hero_trust2:"NOM-08 certified",
+    why_eyebrow:"Why travel with us", why_title:"More than a tour. A local welcome.",
+    why_sub:"Every detail is handled by our family so you can relax and experience Mazatlán the way locals know it.",
+    srv_eyebrow:"What we offer", srv_title:"Featured services",
+    about_eyebrow:"Our story", about_title:"A family business built on local knowledge",
+    about_p1:"Rojas Exploring Mazatlán began as a family passion for our city and grew into a trusted name in private tourism. We are not a call center or a faceless agency. When you book with us, you are welcomed by the same people who guide you.",
+    about_p2:"As a certified guide under SECTUR and NOM-08 standards, every experience is built around your interests, your pace and your comfort. From the historic center to the open sea, we share the Mazatlán we love.",
+    about_stat:"Years sharing Mazatlán", about_b1n:"100%", about_b1t:"Private & personalized", about_b2n:"SECTUR", about_b2t:"Certified guide",
+    gal_eyebrow:"A glimpse", gal_title:"Moments from Mazatlán",
+    rev_eyebrow:"Guest reviews", rev_title:"What travelers say",
+    book_eyebrow:"Simple & easy", book_title:"How it works",
+    con_eyebrow:"Get in touch", con_title:"Let's plan your Mazatlán experience",
+    con_sub:"Tell us what you have in mind and we'll reply quickly, usually within a few hours.",
+    con_phone:"Phone", con_email:"Email", con_loc:"Location",
+    form_title:"Request your tour", form_name:"Full name", form_email:"Email", form_phone:"Phone",
+    form_msg:"What would you like to do?", form_btn:"Send via WhatsApp", form_note:"We reply quickly, usually within a few hours.",
+    foot_about:"Authentic private tours and transportation in Mazatlán, guided by a certified local family.",
+    foot_links:"Quick links", foot_srv:"Services", foot_contact:"Contact", foot_rights:"All Rights Reserved.",
+    why:[
+      ["Certified tour guide","Officially certified by SECTUR under NOM-08 standards for your peace of mind."],
+      ["Family-owned business","You're cared for by the same family that founded and runs every tour."],
+      ["Private & personalized","No crowds, no rushing. Each experience is built only for your group."],
+      ["Local expertise","We share the hidden corners, stories and flavors only locals know."],
+      ["Safe & reliable transport","Comfortable, well-kept vehicles and careful, professional driving."],
+      ["Flexible custom tours","Change the plan anytime. Your trip adapts to you, not the other way around."]
+    ],
+    srv:[
+      ["Airport Transportation","Safe and comfortable transfers to and from Mazatlán International Airport."],
+      ["Private Tours","Customized experiences tailored entirely to your interests and pace."],
+      ["Fishing Trips","Unforgettable fishing adventures guided by experienced local captains."],
+      ["Cultural Excursions","Explore the history, traditions and hidden gems of Mazatlán."],
+      ["Private Transportation","Reliable transport for individuals, families and groups of any size."],
+      ["Custom Experiences","Tell us your dream trip and we'll build the perfect itinerary for it."]
+    ],
+    gallery:["Historic Center","Malecón Boardwalk","Fishing Trip","El Faro Lighthouse","Golden Beaches","Sunset Cruise","Cultural Tour","Local Food Experience","Old Town Streets","Stone Island","Cathedral Basilica","Pacific Coastline"],
+    reviews:[
+      ["Sarah M.","United States","Our guide knew every story behind every street. The most personal tour we've ever taken, and the transportation was spotless."],
+      ["James & Linda","Canada","Booked an airport transfer and ended up adding a full day tour. Punctual, friendly and genuinely kind people."],
+      ["Marco R.","Italy","The fishing trip was the highlight of our vacation. Real local experts who clearly love what they do."],
+      ["Emily T.","United Kingdom","Felt safe the entire time. They customized everything for our family with two kids. Highly recommend."],
+      ["Daniel K.","Germany","Professional from the first message to the last. The cultural excursion gave us a Mazatlán we'd never have found alone."],
+      ["Sofía L.","Mexico","Atención de primera. Una familia encantadora que te trata como si fueras parte de ella. Volveremos sin duda."]
+    ],
+    booking:[
+      ["Contact us","Reach out by WhatsApp, phone or the form. Tell us your dates and what you'd love to see."],
+      ["Customize your experience","We design an itinerary around your interests, group and budget, with no pressure."],
+      ["Enjoy Mazatlán","Sit back and explore. We handle transport, timing and every local detail."]
+    ]
+  },
+  es: {
+    nav_home:"Inicio", nav_tours:"Por Qué", nav_services:"Servicios", nav_gallery:"Galería", nav_about:"Nosotros", nav_contact:"Contacto",
+    hero_badge:"Guía Local Certificado por SECTUR",
+    hero_title:"Descubre el verdadero Mazatlán con un guía local certificado",
+    hero_sub:"Tours privados, traslados al aeropuerto, aventuras de pesca y experiencias culturales diseñadas para viajeros que buscan algo más que turismo.",
+    hero_cta1:"Reserva tu tour", hero_cta2:"Contáctanos por WhatsApp",
+    hero_trust1:"La confianza de viajeros de todo el mundo", hero_trust2:"Certificado NOM-08",
+    why_eyebrow:"Por qué viajar con nosotros", why_title:"Más que un tour. Una bienvenida local.",
+    why_sub:"Cuidamos cada detalle en familia para que solo te dediques a disfrutar Mazatlán como lo conocen los locales.",
+    srv_eyebrow:"Lo que ofrecemos", srv_title:"Servicios destacados",
+    about_eyebrow:"Nuestra historia", about_title:"Un negocio familiar construido sobre el conocimiento local",
+    about_p1:"Rojas Exploring Mazatlán nació de la pasión de una familia por su ciudad y se convirtió en un nombre de confianza en el turismo privado. No somos un call center ni una agencia sin rostro. Cuando reservas con nosotros, te reciben las mismas personas que te guían.",
+    about_p2:"Como guía certificado bajo los estándares de SECTUR y NOM-08, cada experiencia se construye alrededor de tus intereses, tu ritmo y tu comodidad. Desde el centro histórico hasta el mar abierto, compartimos el Mazatlán que amamos.",
+    about_stat:"Años compartiendo Mazatlán", about_b1n:"100%", about_b1t:"Privado y personalizado", about_b2n:"SECTUR", about_b2t:"Guía certificado",
+    gal_eyebrow:"Un vistazo", gal_title:"Momentos de Mazatlán",
+    rev_eyebrow:"Reseñas de huéspedes", rev_title:"Lo que dicen los viajeros",
+    book_eyebrow:"Simple y fácil", book_title:"Cómo funciona",
+    con_eyebrow:"Contáctanos", con_title:"Planeemos tu experiencia en Mazatlán",
+    con_sub:"Cuéntanos qué tienes en mente y te responderemos pronto, normalmente en unas pocas horas.",
+    con_phone:"Teléfono", con_email:"Correo", con_loc:"Ubicación",
+    form_title:"Solicita tu tour", form_name:"Nombre completo", form_email:"Correo", form_phone:"Teléfono",
+    form_msg:"¿Qué te gustaría hacer?", form_btn:"Enviar por WhatsApp", form_note:"Respondemos pronto, normalmente en unas pocas horas.",
+    foot_about:"Tours privados y transporte auténtico en Mazatlán, guiados por una familia local certificada.",
+    foot_links:"Enlaces rápidos", foot_srv:"Servicios", foot_contact:"Contacto", foot_rights:"Todos los derechos reservados.",
+    why:[
+      ["Guía certificado","Certificado oficialmente por SECTUR bajo los estándares NOM-08 para tu tranquilidad."],
+      ["Negocio familiar","Te atiende la misma familia que fundó y opera cada tour."],
+      ["Privado y personalizado","Sin multitudes ni prisas. Cada experiencia se diseña solo para tu grupo."],
+      ["Conocimiento local","Compartimos los rincones, historias y sabores que solo los locales conocen."],
+      ["Transporte seguro y confiable","Vehículos cómodos y bien cuidados, con conducción profesional y atenta."],
+      ["Tours flexibles a tu medida","Cambia el plan cuando quieras. Tu viaje se adapta a ti, no al revés."]
+    ],
+    srv:[
+      ["Traslados al Aeropuerto","Traslados seguros y cómodos desde y hacia el Aeropuerto Internacional de Mazatlán."],
+      ["Tours Privados","Experiencias personalizadas hechas a la medida de tus intereses y tu ritmo."],
+      ["Viajes de Pesca","Aventuras de pesca inolvidables guiadas por capitanes locales con experiencia."],
+      ["Excursiones Culturales","Explora la historia, las tradiciones y los tesoros escondidos de Mazatlán."],
+      ["Transporte Privado","Transporte confiable para personas, familias y grupos de cualquier tamaño."],
+      ["Experiencias a Medida","Cuéntanos tu viaje soñado y armamos el itinerario perfecto para ti."]
+    ],
+    gallery:["Centro Histórico","Malecón","Viaje de Pesca","Faro El Faro","Playas Doradas","Crucero al Atardecer","Tour Cultural","Experiencia Gastronómica","Calles del Centro","Isla de la Piedra","Catedral Basílica","Costa del Pacífico"],
+    reviews:[
+      ["Sarah M.","Estados Unidos","Nuestro guía conocía la historia detrás de cada calle. El tour más personal que hemos hecho, y el transporte impecable."],
+      ["James y Linda","Canadá","Reservamos un traslado y terminamos agregando un día completo de tour. Puntuales, amables y gente genuinamente buena."],
+      ["Marco R.","Italia","El viaje de pesca fue lo mejor de nuestras vacaciones. Verdaderos expertos locales que aman lo que hacen."],
+      ["Emily T.","Reino Unido","Nos sentimos seguros todo el tiempo. Personalizaron todo para nuestra familia con dos niños. Muy recomendable."],
+      ["Daniel K.","Alemania","Profesionales desde el primer mensaje hasta el último. La excursión cultural nos mostró un Mazatlán que solos nunca habríamos encontrado."],
+      ["Sofía L.","México","Atención de primera. Una familia encantadora que te trata como si fueras parte de ella. Volveremos sin duda."]
+    ],
+    booking:[
+      ["Contáctanos","Escríbenos por WhatsApp, teléfono o el formulario. Dinos tus fechas y lo que te encantaría conocer."],
+      ["Personaliza tu experiencia","Diseñamos un itinerario según tus intereses, grupo y presupuesto, sin presiones."],
+      ["Disfruta Mazatlán","Relájate y explora. Nosotros nos encargamos del transporte, los tiempos y cada detalle local."]
+    ]
+  }
+};
+
+const ICONS = [
+  '<path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>',
+  '<path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>',
+  '<path d="M12 3a4 4 0 014 4c0 3-4 7-4 7s-4-4-4-7a4 4 0 014-4z" stroke="currentColor" stroke-width="1.6"/><path d="M5 21c2-2 4-2 7-2s5 0 7 2" stroke="currentColor" stroke-width="1.6"/>',
+  '<path d="M12 21s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="11" r="2.5" stroke="currentColor" stroke-width="1.6"/>',
+  '<path d="M3 13l2-5h14l2 5M5 13h14v5a1 1 0 01-1 1H6a1 1 0 01-1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="8" cy="18" r="1.5" fill="currentColor"/><circle cx="16" cy="18" r="1.5" fill="currentColor"/>',
+  '<path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>'
+];
+const SRV_ICONS = [
+  '<path d="M5 19l14-7L5 5v5l9 2-9 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>',
+  '<path d="M12 3a4 4 0 014 4c0 3-4 7-4 7s-4-4-4-7a4 4 0 014-4z" stroke="currentColor" stroke-width="1.6"/><path d="M5 21c2-2 4-2 7-2s5 0 7 2" stroke="currentColor" stroke-width="1.6"/>',
+  '<path d="M3 17c3-1 4-3 9-3s6 2 9 3M7 14l-1-7 4 2 2-4 2 4 4-2-1 7" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>',
+  '<path d="M4 21V9l8-6 8 6v12M9 21v-7h6v7" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>',
+  '<rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><circle cx="8" cy="18" r="1.5" fill="currentColor"/><circle cx="16" cy="18" r="1.5" fill="currentColor"/>',
+  '<path d="M12 2l2.4 6.9H22l-6 4.4 2.3 7-6.3-4.6L5.7 20.3 8 13.3 2 8.9h7.6z" stroke="currentColor" stroke-width="1.4"/>'
+];
+const GAL_IMGS = [
+  "1518105779142-d975f22f1b0a","1564507592333-c60657eea523","1544551763-46a013bb70d5","1505881502353-a1986add3762",
+  "1507525428034-b723cf961d3e","1495954484750-af469f2f9be5","1551316679-9c6ae9dec224","1414235077428-338989a2e8c0",
+  "1533105079780-92b9be482077","1559827260-dc66d52bef19","1486299267070-83823f5448dd","1502209524164-acea936639a2"
+];
+
+let LANG = 'en';
+
+function applyLang(){
+  const d = I18N[LANG];
+  document.documentElement.lang = LANG;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k = el.getAttribute('data-i18n');
+    if (d[k] !== undefined) el.textContent = d[k];
+  });
+  document.getElementById('langLabel').textContent = LANG==='en' ? 'ES' : 'EN';
+  document.getElementById('langLabelMobile').textContent = LANG==='en' ? 'Español' : 'English';
+  buildDynamic();
+}
+
+function buildDynamic(){
+  const d = I18N[LANG];
+  // Why
+  document.getElementById('whyGrid').innerHTML = d.why.map((w,i)=>`
+    <div class="reveal in card-lift bg-white rounded-2xl p-7 border border-navy/8">
+      <span class="grid place-items-center w-12 h-12 rounded-xl bg-ocean-mist text-ocean mb-5"><svg width="24" height="24" viewBox="0 0 24 24" fill="none">${ICONS[i]}</svg></span>
+      <h3 class="font-display text-[20px] font-600 text-navy mb-2">${w[0]}</h3>
+      <p class="text-navy/60 text-[14.5px] leading-relaxed">${w[1]}</p>
+    </div>`).join('');
+  // Services
+  document.getElementById('servicesGrid').innerHTML = d.srv.map((s,i)=>`
+    <div class="reveal in card-lift group bg-sand rounded-2xl p-7 border border-navy/8 relative overflow-hidden">
+      <span class="grid place-items-center w-14 h-14 rounded-2xl bg-navy text-gold mb-5 group-hover:bg-ocean transition"><svg width="26" height="26" viewBox="0 0 24 24" fill="none">${SRV_ICONS[i]}</svg></span>
+      <h3 class="font-display text-[21px] font-600 text-navy mb-2">${s[0]}</h3>
+      <p class="text-navy/60 text-[14.5px] leading-relaxed">${s[1]}</p>
+    </div>`).join('');
+  // Gallery
+  document.getElementById('galleryGrid').innerHTML = d.gallery.map((g,i)=>{
+    const tall = (i%5===0) ? 'row-span-2' : '';
+    return `<div class="gallery-item ${tall} relative rounded-2xl overflow-hidden group cursor-pointer">
+      <img loading="lazy" src="https://images.unsplash.com/photo-${GAL_IMGS[i]}?auto=format&fit=crop&w=600&q=70" alt="${g}" class="w-full h-full object-cover ${tall?'min-h-[320px]':'h-44 sm:h-52'}" />
+      <div class="overlay absolute inset-0 bg-gradient-to-t from-navy-deep/85 via-navy-deep/10 to-transparent flex items-end p-4">
+        <span class="text-white font-600 text-[14px]">${g}</span>
+      </div>
+    </div>`;
+  }).join('');
+  // Reviews
+  document.getElementById('reviewsGrid').innerHTML = d.reviews.map(r=>`
+    <div class="reveal in card-lift bg-white rounded-2xl p-7 border border-navy/8">
+      <div class="text-gold text-[15px] tracking-wide mb-4">★★★★★</div>
+      <p class="text-navy/70 text-[15px] leading-relaxed mb-6">"${r[2]}"</p>
+      <div class="flex items-center gap-3 pt-4 border-t border-navy/8">
+        <span class="grid place-items-center w-10 h-10 rounded-full bg-ocean text-white font-600 text-[14px]">${r[0].charAt(0)}</span>
+        <span><span class="block font-600 text-navy text-[14px]">${r[0]}</span><span class="block text-navy/45 text-[12px]">${r[1]}</span></span>
+      </div>
+    </div>`).join('');
+  // Booking
+  document.getElementById('bookingGrid').innerHTML = d.booking.map((b,i)=>`
+    <div class="reveal in relative text-center bg-white rounded-2xl p-8 border border-navy/8">
+      <span class="grid place-items-center w-14 h-14 mx-auto rounded-full bg-navy text-gold font-display text-[22px] font-600 mb-5">${i+1}</span>
+      <h3 class="font-display text-[21px] font-600 text-navy mb-2">${b[0]}</h3>
+      <p class="text-navy/60 text-[14.5px] leading-relaxed">${b[1]}</p>
+    </div>`).join('');
+  observeReveals();
+}
+
+/* ---------- Reveal on scroll ---------- */
+function observeReveals(){
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+}
+
+/* ---------- Navbar scroll style ---------- */
+const navbar = document.getElementById('navbar');
+function navStyle(){
+  const s = window.scrollY > 40;
+  navbar.classList.toggle('bg-white/95', s);
+  navbar.classList.toggle('backdrop-blur-md', s);
+  navbar.classList.toggle('shadow-sm', s);
+  document.querySelectorAll('.nav-brand').forEach(el=>{ el.classList.toggle('text-white', !s); el.classList.toggle('text-navy', s); });
+  document.querySelectorAll('.nav-items a').forEach(el=>{ el.classList.toggle('text-white/90', !s); el.classList.toggle('text-navy/80', s); });
+  const lang = document.getElementById('langToggle');
+  lang.classList.toggle('border-white/30', !s); lang.classList.toggle('text-white', !s);
+  lang.classList.toggle('border-navy/20', s); lang.classList.toggle('text-navy', s);
+  document.querySelectorAll('.nav-burger').forEach(el=>{ el.classList.toggle('text-white', !s); el.classList.toggle('text-navy', s); });
+}
+window.addEventListener('scroll', navStyle);
+
+/* ---------- Mobile menu ---------- */
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+menuBtn.addEventListener('click', ()=>{
+  const open = mobileMenu.classList.toggle('hidden');
+  menuBtn.setAttribute('aria-expanded', String(!open));
+});
+document.querySelectorAll('.mobile-link').forEach(l=>l.addEventListener('click', ()=>mobileMenu.classList.add('hidden')));
+
+/* ---------- Language toggle ---------- */
+function toggleLang(){ LANG = LANG==='en' ? 'es' : 'en'; applyLang(); navStyle(); }
+document.getElementById('langToggle').addEventListener('click', toggleLang);
+document.getElementById('langToggleMobile').addEventListener('click', ()=>{ toggleLang(); mobileMenu.classList.add('hidden'); });
+
+/* ---------- Contact form -> WhatsApp ---------- */
+document.getElementById('sendBtn').addEventListener('click', ()=>{
+  const n = document.getElementById('f_name').value.trim();
+  const e = document.getElementById('f_email').value.trim();
+  const p = document.getElementById('f_phone').value.trim();
+  const m = document.getElementById('f_msg').value.trim();
+  const intro = LANG==='en' ? 'Hello Rojas Exploring Mazatlán, I would like to request a tour.' : 'Hola Rojas Exploring Mazatlán, me gustaría solicitar un tour.';
+  const txt = `${intro}%0A%0AName: ${n}%0AEmail: ${e}%0APhone: ${p}%0A%0A${m}`;
+  window.open(`https://wa.me/526692978408?text=${txt}`, '_blank');
+});
+
+/* ---------- Init ---------- */
+applyLang();
+navStyle();
+observeReveals();
+</script>
+</body>
+</html>
