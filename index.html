@@ -231,6 +231,7 @@ tailwind.config = {
       <h2 class="font-display text-navy text-[34px] lg:text-[44px] font-600 mt-3 leading-tight" data-i18n="gal_title">Moments from Mazatlán</h2>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4" id="galleryGrid"></div>
+    <div id="galleryCta" class="mt-8 text-center"></div>
   </div>
 </section>
 
@@ -546,15 +547,25 @@ function buildDynamic(){
       <p class="text-navy/50 text-[14.5px] leading-relaxed flex-1">${s[1]}</p>
     </div>`).join('');
   // Gallery
-  document.getElementById('galleryGrid').innerHTML = d.gallery.map((g,i)=>{
-    const tall = (i%5===0) ? 'row-span-2' : '';
-    return `<div class="gallery-item ${tall} relative rounded-2xl overflow-hidden group cursor-pointer">
-      <img loading="lazy" src="https://placehold.co/600x400/0B2545/C8A24B?text=Photo+Placeholder" alt="${g}" class="w-full h-full object-cover ${tall?'min-h-[320px]':'h-44 sm:h-52'}" />
-      <div class="overlay absolute inset-0 bg-gradient-to-t from-navy-deep/85 via-navy-deep/10 to-transparent flex items-end p-4">
-        <span class="text-white font-600 text-[14px]">${g}</span>
-      </div>
-    </div>`;
-  }).join('');
+  const galLabel = LANG==='en' ? ['See all photos','Hide photos'] : ['Ver todas las fotos','Ocultar fotos'];
+  let galExpanded = false;
+  function renderGallery(){
+    const items = galExpanded ? d.gallery : d.gallery.slice(0,4);
+    document.getElementById('galleryGrid').innerHTML = items.map((g,i)=>`
+      <div class="gallery-item relative rounded-2xl overflow-hidden group cursor-pointer">
+        <img loading="lazy" src="https://placehold.co/600x400/0B2545/C8A24B?text=Photo+Placeholder" alt="${g}" class="w-full h-44 sm:h-52 object-cover" />
+        <div class="overlay absolute inset-0 bg-gradient-to-t from-navy-deep/85 via-navy-deep/10 to-transparent flex items-end p-4">
+          <span class="text-white font-600 text-[14px]">${g}</span>
+        </div>
+      </div>`).join('');
+    document.getElementById('galleryCta').innerHTML = `
+      <button onclick="window._galToggle()" class="inline-flex items-center gap-2 text-[14px] font-600 text-navy/60 hover:text-navy transition border border-navy/15 hover:border-navy/30 px-5 py-2.5 rounded-full">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 10h16M4 14h10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        ${galExpanded ? galLabel[1] : galLabel[0]}
+      </button>`;
+  }
+  window._galToggle = ()=>{ galExpanded=!galExpanded; renderGallery(); observeReveals(); };
+  renderGallery();
   // Reviews (only first 3)
   document.getElementById('reviewsGrid').innerHTML = d.reviews.slice(0,3).map(r=>`
     <div class="reveal in card-lift bg-white rounded-2xl p-7 border border-navy/8">
