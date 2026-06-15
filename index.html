@@ -177,7 +177,7 @@ tailwind.config = {
       <h2 class="font-display text-navy text-[34px] lg:text-[44px] font-600 mt-3 leading-tight" data-i18n="why_title">More than a tour. A local welcome.</h2>
       <p class="text-navy/60 text-[17px] mt-4 leading-relaxed" data-i18n="why_sub">Every detail is handled by our family so you can relax and experience Mazatlán the way locals know it.</p>
     </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" id="whyGrid"></div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3" id="whyGrid"></div>
   </div>
 </section>
 
@@ -188,7 +188,7 @@ tailwind.config = {
       <span class="text-ocean text-[12px] font-700 tracking-[0.22em] uppercase" data-i18n="srv_eyebrow">What we offer</span>
       <h2 class="font-display text-navy text-[34px] lg:text-[44px] font-600 mt-3 leading-tight" data-i18n="srv_title">Featured services</h2>
     </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="servicesGrid"></div>
+    <div id="servicesGrid" class="border-b border-navy/10"></div>
   </div>
 </section>
 
@@ -525,17 +525,24 @@ function buildDynamic(){
   const d = I18N[LANG];
   // Why
   document.getElementById('whyGrid').innerHTML = d.why.map((w,i)=>`
-    <div class="reveal in card-lift bg-white rounded-2xl p-7 border border-navy/8">
-      <span class="grid place-items-center w-12 h-12 rounded-xl bg-ocean-mist text-ocean mb-5"><svg width="24" height="24" viewBox="0 0 24 24" fill="none">${ICONS[i]}</svg></span>
-      <h3 class="font-display text-[20px] font-600 text-navy mb-2">${w[0]}</h3>
-      <p class="text-navy/60 text-[14.5px] leading-relaxed">${w[1]}</p>
+    <div class="reveal in py-8 border-t border-navy/12">
+      <span class="block text-[11px] font-700 tracking-[0.2em] text-gold/80 uppercase mb-4">0${i+1}</span>
+      <div class="flex gap-3 items-start">
+        <span class="shrink-0 mt-0.5 text-ocean opacity-70"><svg width="18" height="18" viewBox="0 0 24 24" fill="none">${ICONS[i]}</svg></span>
+        <div>
+          <h3 class="font-display text-[19px] font-600 text-navy mb-2 leading-snug">${w[0]}</h3>
+          <p class="text-navy/55 text-[14px] leading-relaxed">${w[1]}</p>
+        </div>
+      </div>
     </div>`).join('');
   // Services
   document.getElementById('servicesGrid').innerHTML = d.srv.map((s,i)=>`
-    <div class="reveal in card-lift group bg-sand rounded-2xl p-7 border border-navy/8 relative overflow-hidden">
-      <span class="grid place-items-center w-14 h-14 rounded-2xl bg-navy text-gold mb-5 group-hover:bg-ocean transition"><svg width="26" height="26" viewBox="0 0 24 24" fill="none">${SRV_ICONS[i]}</svg></span>
-      <h3 class="font-display text-[21px] font-600 text-navy mb-2">${s[0]}</h3>
-      <p class="text-navy/60 text-[14.5px] leading-relaxed">${s[1]}</p>
+    <div class="reveal in group flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-10 py-7 border-t border-navy/10 cursor-default">
+      <span class="shrink-0 grid place-items-center w-10 h-10 rounded-xl bg-ocean/8 text-ocean group-hover:bg-navy group-hover:text-gold transition-all duration-300">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">${SRV_ICONS[i]}</svg>
+      </span>
+      <h3 class="font-display text-[20px] font-600 text-navy sm:w-56 shrink-0 leading-snug">${s[0]}</h3>
+      <p class="text-navy/50 text-[14.5px] leading-relaxed flex-1">${s[1]}</p>
     </div>`).join('');
   // Gallery
   document.getElementById('galleryGrid').innerHTML = d.gallery.map((g,i)=>{
